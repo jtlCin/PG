@@ -1,20 +1,20 @@
 # PG
-2¬∫ Projeto de processamento gr√°fico [TEMA 13: Rota√ß√£o em 3 eixos (4 alunos)].
+2∫ Projeto de processamento gr·fico [TEMA 13: RotaÁ„o em 3 eixos (4 alunos)].
 
-Descri√ß√£o do projeto:
-Parte Geral: Implementar o m√©todo de visualiza√ß√£o de objetos triangulados, atrav√©s do algoritmo de convers√£o por varredura, com m√©todos de interpola√ß√£o de Phong, com a visibilidade garantida pelo algoritmo do ‚Äúz-buffer‚Äù.
-Parte Espec√≠fica: rotacionar o objeto em torno de 3 diferentes eixos. 
+DescriÁ„o do projeto:
+Parte Geral: Implementar o mÈtodo de visualizaÁ„o de objetos triangulados, atravÈs do algoritmo de convers„o por varredura, com mÈtodos de interpolaÁ„o de Phong, com a visibilidade garantida pelo algoritmo do ìz-bufferî.
+Parte EspecÌfica: rotacionar o objeto em torno de 3 diferentes eixos. 
 
-Descri√ß√£o: O usu√°rio, atrav√©s de arquivos-texto ou interface gr√°fica, entra com dados do objeto (triangulado, com lista dos v√©rtices e da conectividade, que determina os tri√¢ngulos, de um arquivo-texto), atributos do objeto (ka, kd e ks, pontos flutuantes entre 0 e 1, n, ponto flutuante positivo e Od, tripla de pontos flutuantes entre 0 e 1,), atributos da cena (Ia, IL, triplas de ponto flutuante entre 0 e 255, PL, tripla de ponto flutuante) e os atributos da c√¢mera virtual (C, N e V, triplas de pontos flutuantes, d, hx, e hy, pontos flutuantes positivos). O seu sistema deve preparar a c√¢mera, ortogonalizando V  e gerando U, e depois os normalizando, fazer a mudan√ßa de coordenadas para o sistema de vista de todos os v√©rtices do objeto e da posi√ß√£o da fonte de luz PL, gerar as normais dos tri√¢ngulos e gerar as normais dos v√©rtices (como recomendado em sala de aula). Para cada tri√¢ngulo, calculam-se as proje√ß√µes dos seus v√©rtices e inicia-se assim a sua convers√£o por varredura. Para cada pixel (x, yscan), calculam-se suas coordenadas baric√™ntricas com rela√ß√£o aos v√©rtices projetados, e multiplicam-se essas coordenadas pelos correspondentes v√©rtices do tri√¢ngulo 3D original para se obter uma aproxima√ß√£o para o ponto 3D original correspondente ao pixel atual. Ap√≥s uma consulta ao z-buffer, se for o caso, calcula-se uma aproxima√ß√£o para a normal do ponto utilizando-se mesmas coordenadas baric√™ntricas multiplicadas pelas normais dos respectivos v√©rtices originais. Calculam-se tamb√©m os demais vetores (L, V e R) e os substitui na equa√ß√£o do modelo de ilumina√ß√£o de Phong produzindo a cor do pixel atual. Na interface o sistema dever√° ter tr√™s bot√µes para se executar uma rota√ß√£o em torno de cada um dos tr√™s eixos: eixo OZ da c√¢mera, eixo paralelo a OX, passando pelo centroide do objeto, e eixo paralelo a OY, passando pelo centroide do objeto. Dever√° haver um campo para se indicar o desejado √¢ngulo de rota√ß√£o. Ap√≥s o usu√°rio apertar um dos bot√µes, o sistema dever√° executar a correspondente rota√ß√£o afim em coordenadas de vista de todos os pontos do objeto e fazer a sua visualiza√ß√£o de novo, como descrita acima.
+DescriÁ„o: O usu·rio, atravÈs de arquivos-texto ou interface gr·fica, entra com dados do objeto (triangulado, com lista dos vÈrtices e da conectividade, que determina os tri‚ngulos, de um arquivo-texto), atributos do objeto (ka, kd e ks, pontos flutuantes entre 0 e 1, n, ponto flutuante positivo e Od, tripla de pontos flutuantes entre 0 e 1,), atributos da cena (Ia, IL, triplas de ponto flutuante entre 0 e 255, PL, tripla de ponto flutuante) e os atributos da c‚mera virtual (C, N e V, triplas de pontos flutuantes, d, hx, e hy, pontos flutuantes positivos). O seu sistema deve preparar a c‚mera, ortogonalizando V  e gerando U, e depois os normalizando, fazer a mudanÁa de coordenadas para o sistema de vista de todos os vÈrtices do objeto e da posiÁ„o da fonte de luz PL, gerar as normais dos tri‚ngulos e gerar as normais dos vÈrtices (como recomendado em sala de aula). Para cada tri‚ngulo, calculam-se as projeÁıes dos seus vÈrtices e inicia-se assim a sua convers„o por varredura. Para cada pixel (x, yscan), calculam-se suas coordenadas baricÍntricas com relaÁ„o aos vÈrtices projetados, e multiplicam-se essas coordenadas pelos correspondentes vÈrtices do tri‚ngulo 3D original para se obter uma aproximaÁ„o para o ponto 3D original correspondente ao pixel atual. ApÛs uma consulta ao z-buffer, se for o caso, calcula-se uma aproximaÁ„o para a normal do ponto utilizando-se mesmas coordenadas baricÍntricas multiplicadas pelas normais dos respectivos vÈrtices originais. Calculam-se tambÈm os demais vetores (L, V e R) e os substitui na equaÁ„o do modelo de iluminaÁ„o de Phong produzindo a cor do pixel atual. Na interface o sistema dever· ter trÍs botıes para se executar uma rotaÁ„o em torno de cada um dos trÍs eixos: eixo OZ da c‚mera, eixo paralelo a OX, passando pelo centroide do objeto, e eixo paralelo a OY, passando pelo centroide do objeto. Dever· haver um campo para se indicar o desejado ‚ngulo de rotaÁ„o. ApÛs o usu·rio apertar um dos botıes, o sistema dever· executar a correspondente rotaÁ„o afim em coordenadas de vista de todos os pontos do objeto e fazer a sua visualizaÁ„o de novo, como descrita acima.
 
 
-A ideia desse projeto √© n√£o ser reprovado nessa cadeira ;-P
-Se tirarmos 5 nele, ent√£o s√≥ precisariamos assisnar nossos nomes na ata da prova e irmos para casa dormir felizes. :D
+A ideia desse projeto È n„o ser reprovado nessa cadeira ;-P
+Se tirarmos 5 nele, ent„o sÛ precisariamos assisnar nossos nomes na ata da prova e irmos para casa dormir felizes. :D
 
-Para o desenvouvimento desse projeto iremos usar o falcom C++ como uma IDE de suporte, pois ele j√° vem com o necess√°rio instalado:
+Para o desenvouvimento desse projeto iremos usar o falcom C++ como uma IDE de suporte, pois ele j· vem com o necess·rio instalado:
 	https://sourceforge.net/projects/falconcpp/
 
-Aconselho a instalarem o Git para desktop para auxiliar a sua integra√ß√£o e sicroniza√ß√£o com o reposit√≥rio:
+Aconselho a instalarem o Git para desktop para auxiliar a sua integraÁ„o e sicronizaÁ„o com o repositÛrio:
 	https://desktop.github.com/
 
 Iremos utilizar principalmente as bibliotecas:
@@ -26,7 +26,7 @@ Iremos utilizar principalmente as bibliotecas:
 		https://drive.google.com/file/d/0Bw0tUCMUoMKWMm9zd3RtMGlkbkk/view
 
 
-Ajuda do monitor com os passos b√°sicos de todos os projetos:
+Ajuda do monitor com os passos b·sicos de todos os projetos:
 	https://lookaside.fbsbx.com/file/P2_parte_geral.txt?token=AWwCUrBbKWU5AhKwChkT0j9BRGIgadCgCboGIifA0RPE47NehnpTmJrdXhPM3pOGaSx5IAAxmC2oEo4hQxmz3K9h8a6j5e6fc7u_wNm6HcXCBHpiU4eTh1kvknZ89HMIS0MGsh9bUu6hoRGDX1C8xvFZ
 
 Arquivos testes de entradas para os projetos:
@@ -34,16 +34,14 @@ Arquivos testes de entradas para os projetos:
 
 
 O que teremos que fazer: https://drive.google.com/drive/folders/0Bw3ECeoqnXDARkt4ejROUEdYZWc?usp=sharing
-1¬∫) Carrega o objeto
-2¬∫) Carregar dados da sena [Fonte de Luz, Posi√ß√£o de luz, atributos do objeto (Ka, Kd, Ks, Od, n)]
-3¬∫) Carregar dados da C√¢mera (C, N e V), (d, hx, hy)
-4¬∫) Normaliza os dois U = N x V
-5¬∫) Mudar as cordenadas de todos os pontos, incluindo a posi√ß√£o da fonte
-6¬∫) Calcula as normas nos tri√¢ngulos
-7¬∫) Inicializa as normais dos pontos com (0, 0, 0). Soma as normais dos tri√¢ngulos √†s normais dos seus v√©rtices
-8¬∫) Normaliza as normais. :D
-9¬∫) Varredura:
+1∫) Carrega o objeto
+2∫) Carregar dados da sena [Fonte de Luz, PosiÁ„o de luz, atributos do objeto (Ka, Kd, Ks, Od, n)]
+3∫) Carregar dados da C‚mera (C, N e V), (d, hx, hy)
+4∫) Normaliza os dois U = N x V
+5∫) Mudar as cordenadas de todos os pontos, incluindo a posiÁ„o da fonte
+6∫) Calcula as normas nos tri‚ngulos
+7∫) Inicializa as normais dos pontos com (0, 0, 0). Soma as normais dos tri‚ngulos ‡s normais dos seus vÈrtices
+8∫) Normaliza as normais. :D
+9∫) Varredura:
 	- Inicializa o z-buffer
 	- Para cada triangulo (P1, P2, P3)
-
-
