@@ -1,4 +1,4 @@
-# PG
+﻿# PG
 2º Projeto de processamento gráfico [TEMA 13: Rotação em 3 eixos (4 alunos)].
 
 Descrição do projeto:
@@ -44,7 +44,8 @@ Iremos utilizar principalmente as bibliotecas:
 Ajuda do monitor com os passos básicos de todos os projetos:
 
 	https://lookaside.fbsbx.com/file/P2_parte_geral.txt?token=AWwCUrBbKWU5AhKwChkT0j9BRGIgadCgCboGIifA0RPE47NehnpTmJrdXhPM3pOGaSx5IAAxmC2oEo4hQxmz3K9h8a6j5e6fc7u_wNm6HcXCBHpiU4eTh1kvknZ89HMIS0MGsh9bUu6hoRGDX1C8xvFZ
-
+	http://www.cin.ufpe.br/~marcelow/Marcelow/programacao_cg_files/review-pipeline.pdf
+	http://www.cin.ufpe.br/~marcelow/Marcelow/programacao_cg_files/conceitosiluminacao.pdf
 
 Arquivos testes de entradas para os projetos:
 
