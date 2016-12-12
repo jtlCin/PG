@@ -6,6 +6,8 @@
 #include <string>
 #include <cmath>
 
+#include "LoadModelObject.h"
+
 
 
 #define PI 3.14159265
@@ -13,6 +15,7 @@
 
 
 GLFWwindow* window;
+LoadModelObject loadModelObject("in/objeto.byu");
 
 
 
@@ -79,6 +82,7 @@ int main(void) {
 			Aqui dentro vai ficar tudo que será renderizado
 		
 		*/
+		loadModelObject.model();
 		
 		
 		
