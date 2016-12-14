@@ -1,14 +1,13 @@
 #ifndef LOADMODELOBJECT_H
 #define LOADMODELOBJECT_H
 
-#include <fstream>
 #include <vector>
 
 struct coordinateV {
 	float x, y, z;
 };
 struct coordinateS {
-	int x, y, z;
+	int a, b, c;
 };
 
 class LoadModelObject {
@@ -26,21 +25,21 @@ class LoadModelObject {
 			if (inObj.good()) {
 				
 				std::string line;
-				int numVertives, numSentido;
+				int numVertives = 0, numSentido = 0;
 				
 				while(getline(inObj, line)) {
 					
-					if (numVertives == 0) {
+					if (numSentido == 0) {
 						sscanf(line.c_str(), "%i %i", &numVertives, &numSentido);
-					} else {
-						if (numVertives--) {
+					} else if (line.length()) {
+						if (numVertives-- > 0) {
 							float x, y, z;
 							sscanf(line.c_str(), " %f %f %f", &x, &y, &z);
 							vertices.push_back({x, y, z});
-						} else if (numSentido--){
-							int x, y, z;
-							sscanf(line.c_str(), " %i %i %i", &x, &y, &z);
-							sentido.push_back({x, y, z});
+						} else {
+							int a, b, c;
+							sscanf(line.c_str(), "%d %d %d", &a, &b, &c);
+							sentido.push_back({a, b, c});
 						}
 					}
 
@@ -49,13 +48,25 @@ class LoadModelObject {
 				inObj.close();
 
 			} else {
-				throw "Erro no carregamento do arquivo";
+				throw "Erro no carregamento do objeto";
 			}
+				
 		}
 
 		~LoadModelObject() {
 			
 		}
+		
+	private:
+		
+		coordinateV calcNormal(coordinateV a, coordinateV b, coordinateV c) { // produto vetorial e vetores ortogononais
+			coordinateV Vector1 = {b.x - a.x, b.y - a.y, b.z - a.z};
+			coordinateV Vector2 = {c.x - a.x, c.y - a.y, c.z - a.z};
+			
+			return {Vector1.y*Vector2.z - Vector2.y*Vector1.z, Vector1.z*Vector2.x - Vector2.z*Vector1.x, Vector1.x*Vector2.y - Vector2.x*Vector1.y};
+		}
+		
+	public:
 		
 		void model() {
 			
@@ -63,10 +74,13 @@ class LoadModelObject {
 				
 				// O desenho desses triangolo devem ser feito pelo algoritimo de rasterizacao
 				
+				coordinateV normal = calcNormal(vertices[sentido[i].a], vertices[sentido[i].b], vertices[sentido[i].c]);
+				
 				glBegin(GL_TRIANGLES);
-					glVertex3f(vertices[sentido[i].x].x, vertices[sentido[i].x].y, vertices[sentido[i].x].z);
-					glVertex3f(vertices[sentido[i].y].x, vertices[sentido[i].y].y, vertices[sentido[i].y].z);
-					glVertex3f(vertices[sentido[i].z].x, vertices[sentido[i].z].y, vertices[sentido[i].z].z);
+					glNormal3f(normal.x, normal.y, normal.z);
+					glVertex3f(vertices[sentido[i].a].x, vertices[sentido[i].a].y, vertices[sentido[i].a].z);
+					glVertex3f(vertices[sentido[i].b].x, vertices[sentido[i].b].y, vertices[sentido[i].b].z);
+					glVertex3f(vertices[sentido[i].c].x, vertices[sentido[i].c].y, vertices[sentido[i].c].z);
 				glEnd();
 				
 			}

@@ -2,11 +2,13 @@
 
 #include <cstdlib>
 #include <iostream>
+#include <fstream>
 
 #include <string>
 #include <cmath>
 
 #include "LoadModelObject.h"
+#include "Camera.h"
 
 
 
@@ -15,8 +17,6 @@
 
 
 GLFWwindow* window;
-LoadModelObject loadModelObject("in/objeto.byu");
-
 
 
 static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
@@ -63,15 +63,33 @@ void startOpengl() {
 	glMatrixMode (GL_MODELVIEW);
 	glLoadIdentity ();
 	
+	// Iluminação
+	glEnable(GL_LIGHTING); // Ativa iluminação
+	glEnable(GL_LIGHT0); // Liga a luz 0
+	GLfloat luzDifusa[4] = {1, 1, 1, 1};
+	glLightfv(GL_LIGHT0, GL_DIFFUSE, luzDifusa);
+	GLfloat position[4] = {-10, 10, 10, 1};
+	glLightfv(GL_LIGHT0, GL_POSITION, position);
+	glEnable(GL_COLOR_MATERIAL);
+	
 }
 
 
 
 int main(void) {
 	
+	
+	
+	
+	Camera camera("in/camera.cfg");
+	LoadModelObject loadModelObject("in/objeto.byu");
+	
+	
+	
 	starGLFW();
 	startOpengl();
 	
+		camera.glLookAt();
 	while (!glfwWindowShouldClose(window)) { // Loop que mantem a tela aberta e todas as atualizacoes devem ser feitas aqui
 		
 		glClear(GL_COLOR_BUFFER_BIT); // verificar, pois parece que temos que implementa-lo
@@ -82,6 +100,7 @@ int main(void) {
 			Aqui dentro vai ficar tudo que será renderizado
 		
 		*/
+		
 		loadModelObject.model();
 		
 		
