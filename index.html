@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>TEMA 13: Rotação em 3 eixos</title>
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+<body>
+
+	<textarea id="content"></textarea> 
+
+	<canvas id="canvas"></canvas>
+
+	<div id="imports">
+		1 - Import Camera<br>
+		<input type="file" name="camera" title="Import Camera" accept=".cfg"><br>
+		2 - Import Object<br>
+		<input type="file" name="object" title="Import Object" accept=".byu"><br>
+		3 - Import Lighting<br>
+		<input type="file" name="lighting" title="Import Lighting" accept=".txt">
+	</div>
+
+	<div id="rotations">
+		<input type="text" name="angle" size="7" placeholder="Angle in degrees"><br>
+		<input type="button" name="RotationX" value="RotationX ↻"><br>
+		<input type="button" name="RotationXah" value="RotationX ↺"><br>	
+		<input type="button" name="RotationY" value="RotationY ↻"><br>
+		<input type="button" name="RotationYah" value="RotationY ↺"><br>	
+		<input type="button" name="RotationZ" value="RotationZ ↻"><br>
+		<input type="button" name="RotationZah" value="Rotationz ↺">
+		
+	</div>
+
+</body>
+
+	<script type="text/javascript" src="js/utils.js"></script>
+	<script type="text/javascript" src="js/camera.js"></script>
+	<script type="text/javascript" src="js/object.js"></script>
+	<script type="text/javascript" src="js/lighting.js"></script>
+	<script type="text/javascript" src="js/z-buffer.js"></script>
+	<script type="text/javascript" src="js/rasterization.js"></script>
+	<script type="text/javascript" src="js/rotation.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+
+</html>

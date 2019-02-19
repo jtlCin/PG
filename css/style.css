@@ -1,0 +1,74 @@
+/* Class:
+----------------------------------------------------------------------------------------------------*/
+* {
+	margin: 0;
+	padding: 0;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ol, ul {
+	list-style: none;
+}
+
+
+#canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+
+/* Rotations:
+----------------------------------------------------------------------------------------------------*/
+div {
+	position: absolute;
+	padding: 20px;
+	top: 20px;
+	background-color: rgba(34, 34, 34, 0.8);
+	text-align: center;
+	color: #FFF;
+
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+
+	opacity: 0.3;
+    filter: alpha(opacity=30); /* For IE8 and earlier */
+}
+div:hover {
+	opacity: 1;
+    filter: alpha(opacity=100); /* For IE8 and earlier */
+}
+div input {
+	margin: 5px 10px;
+
+	padding: 5px 10px;
+	background: #FFF;
+
+	border: thin solid #39B6E7;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+
+	text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+	color: #39B6E7;
+}
+div input[type="file"], input[type="button"]  {
+	cursor: pointer;
+}
+
+#imports {
+	left: 20px;
+}
+
+#rotations {
+	right: 20px;
+}
+
+#content {
+	visibility: hidden;
+}
